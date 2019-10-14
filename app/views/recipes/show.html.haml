@@ -10,9 +10,8 @@
     - else
       - @recipe['analyzedInstructions'].each do |instruction|
         - instruction['steps'].each do |step|
-          %li
-            %span.card-description.subtle= step['step']
-            %p
+          %span.card-description.subtle= step['step']
+          %p
     = link_to 'Back', root_path
+    = link_to 'Save to Cookbook', recipe_favorite_path, method: :post
     %p 
-    .card-shadow
