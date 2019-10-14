@@ -1,0 +1,9 @@
+%h1 Payment form for #{@membership.title} Members!
+= form_with url: charges_path, local: true, method: :post, id: :charge_form do |form|
+  = form.hidden_field :membership_id, value: @membership.id
+  = form.label :email
+  = form.text_field :email
+  #card-number
+  #card-expiry
+  #card-cvc
+  = form.submit 'Submit Payment'

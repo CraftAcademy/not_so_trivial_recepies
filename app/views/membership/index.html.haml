@@ -1,0 +1,18 @@
+%h1 Membership#index
+%p Find me in app/views/membership/index.html.haml
+
+%div
+  - @memberships.each do |membership|
+    %div
+      = membership.title
+      = link_to "Buy", new_charge_path(id: membership.id)
+   
+
+-# Soluton to find Premium using bindingPry, doesn't work with tests though.
+-# %div
+-# - @memberships.each do |iteration|
+-#   - @memberships.find_by_id(1)
+-#   = @memberships[0].title
+-#   = link_to "Buy", new_charge_path(id: @memberships[0].id)
+
+-# {id: "#{dom_id(membership.id)}"}
